@@ -1,23 +1,38 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LoonyBin Prototype 1 (Кастомная кнопка)</title>
-    <!-- Подключаем внешний CSS файл -->
+    <title>Unreal Studios | Вход</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="bg-glow"></div>
 
-    <div class="container">
-        <!-- Текст H3 -->
-        <h3>LoonyBin prototype 1</h3>
-        
-        <!-- Кастомная кнопка-ссылка для скачивания -->
-        <a href="LoonyBinPrototype.zip" download="LoonyBinPrototype.zip" class="custom-download-button">
-            Download
-        </a>
+    <div class="container login-box">
+        <header>
+            <h1 class="logo-text">UNREAL <span>STUDIOS</span></h1>
+            <p class="subtitle">Авторизация в системе</p>
+        </header>
+
+        <form id="registrationForm">
+            <div class="input-group">
+                <input type="text" id="firstName" required placeholder=" ">
+                <label>Имя</label>
+                <div class="bar"></div>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="lastName" placeholder=" ">
+                <label>Фамилия (необязательно)</label>
+                <div class="bar"></div>
+            </div>
+
+            <button type="submit" class="main-btn">ВОЙТИ</button>
+        </form>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
+
