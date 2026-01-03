@@ -3,36 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unreal Studios | Вход</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Unreal Store | Forest Project</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- СТИЛИ (бывшие style.css и styleStore.css) --- */
+        :root {
+            --primary: #00d4ff;
+            --bg-dark: #0b0e11;
+            --card-bg: #15191d;
+            --accent: #007bff;
+            --text-gray: #8b949e;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Анимированный фон */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1c2128 0%, #0b0e11 100%);
+            z-index: -1;
+        }
+
+        header {
+            width: 100%;
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(26, 29, 35, 0.8), transparent);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            letter-spacing: 8px;
+            color: var(--primary);
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: var(--text-gray);
+            margin-top: 10px;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 50px 0;
+        }
+
+        /* Карточка товара */
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid #2d333b;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: scale(1.03);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .version-badge {
+            align-self: center;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .game-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            margin: 0 0 15px 0;
+            color: #fff;
+        }
+
+        .description {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        /* Кнопка */
+        .main-btn {
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .main-btn:hover {
+            background: #00d4ff;
+            color: #000;
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 40px;
+            color: #484f58;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div class="bg-glow"></div>
 
-    <div class="container login-box">
-        <header>
-            <h1 class="logo-text">UNREAL <span>STUDIOS</span></h1>
-            <p class="subtitle">Авторизация в системе</p>
-        </header>
+    <header>
+        <h1>UNREAL STORE</h1>
+        <div class="subtitle">PROJECT FOREST PROTOTYPES</div>
+    </header>
 
-        <form id="registrationForm">
-            <div class="input-group">
-                <input type="text" id="firstName" required placeholder=" ">
-                <label>Имя</label>
-                <div class="bar"></div>
+    <div class="container">
+        <div class="product-card">
+            <div>
+                <span class="version-badge">LATEST UPDATE</span>
+                <h2 class="game-title">Forest v1.0.1</h2>
+                <p class="description">
+                    был добавлен базовый ии
+                </p>
             </div>
+            <a href="https://disk.yandex.ru/d/4QJYYP9upjcuXw" target="_blank" class="main-btn">Скачать с Яндекс Диска</a>
+        </div>
 
-            <div class="input-group">
-                <input type="text" id="lastName" placeholder=" ">
-                <label>Фамилия (необязательно)</label>
-                <div class="bar"></div>
+        <div class="product-card">
+            <div>
+                <span class="version-badge" style="background: rgba(139, 148, 158, 0.1); color: var(--text-gray); border-color: #30363d;">LEGACY</span>
+                <h2 class="game-title">Forest v1.0.0</h2>
+                <p class="description">
+                    Первая публичная версия прототипа. Базовая механика передвижения.
+                </p>
             </div>
-
-            <button type="submit" class="main-btn">ВОЙТИ</button>
-        </form>
+            <a href="https://disk.yandex.ru/d/CDWb1yzyfaVnuw" target="_blank" class="main-btn" style="background: #21262d;">Скачать архив</a>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="footer">
+        © 2026 UNREAL STORE | DEVELOPED BY GEORGIIBAIKER-TECH
+    </div>
+
+    <script>
+        /* --- ЛОГИКА (бывший script.js) --- */
+        // Можно добавить уведомление при клике
+        document.querySelectorAll('.main-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                console.log('Начало загрузки версии: ' + e.target.closest('.product-card').querySelector('.game-title').innerText);
+            });
+        });
+    </script>
 </body>
 </html>
 
